@@ -28,12 +28,6 @@ export const LINKSET = {
       accessMessage: translateRaw('ACCESS_MESSAGE_5')
     }
   ],
-  BUY_AND_EXCHANGE: [
-    {
-      to: '/swap',
-      title: translateRaw('NEW_HEADER_TEXT_12')
-    }
-  ],
   TOOLS: [
     {
       to: '/sign-and-verify-message',
@@ -50,10 +44,6 @@ export const LINKSET = {
     {
       to: '/pushTx',
       title: translateRaw('NEW_HEADER_TEXT_16')
-    },
-    {
-      to: '/ens',
-      title: translateRaw('NEW_HEADER_TEXT_17')
     }
   ]
 };

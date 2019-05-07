@@ -57,9 +57,8 @@ class DesktopHeader extends Component<Props> {
 
   public render() {
     const { nodeLabel, openSidebar, languageSelection, setAccessMessage } = this.props;
-    const { visibleDropdowns: { sendAndReceive, buyAndExchange, tools } } = this.state;
+    const { visibleDropdowns: { sendAndReceive, tools } } = this.state;
     const sendAndReceiveIcon = generateCaretIcon(sendAndReceive);
-    const buyAndExchangeIcon = generateCaretIcon(buyAndExchange);
     const toolsIcon = generateCaretIcon(tools);
 
     return (
@@ -118,24 +117,6 @@ class DesktopHeader extends Component<Props> {
               </li>
               <li
                 className="DesktopHeader-bottom-links-item"
-                onMouseEnter={this.toggleBuyAndExchange}
-                onMouseLeave={this.toggleBuyAndExchange}
-              >
-                {translateRaw('NEW_HEADER_TEXT_4')} <i className={buyAndExchangeIcon} />
-                {buyAndExchange && (
-                  <ul className="DesktopHeader-bottom-links-dropdown">
-                    {LINKSET.BUY_AND_EXCHANGE.map(item => (
-                      <li key={item.to}>
-                        <Link to={item.to} onClick={() => setAccessMessage('')}>
-                          {item.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-              <li
-                className="DesktopHeader-bottom-links-item"
                 onMouseEnter={this.toggleTools}
                 onMouseLeave={this.toggleTools}
               >
@@ -173,7 +154,6 @@ class DesktopHeader extends Component<Props> {
     }));
 
   private toggleSendAndReceive = () => this.toggleDropdown('sendAndReceive');
-  private toggleBuyAndExchange = () => this.toggleDropdown('buyAndExchange');
   private toggleTools = () => this.toggleDropdown('tools');
 
   private attemptSetNodeFromQueryParameter = () => {

@@ -17,16 +17,8 @@ export const navigationLinks: NavigationLink[] = [
     to: '/generate'
   },
   {
-    name: 'NAV_SWAP',
-    to: '/swap'
-  },
-  {
     name: 'NAV_CONTRACTS',
     to: '/contracts'
-  },
-  {
-    name: 'NAV_ENS',
-    to: '/ens'
   },
   {
     name: 'NAV_SIGN',

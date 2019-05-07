@@ -60,10 +60,9 @@ class MobileHeader extends Component<Props> {
 
   public render() {
     const { nodeLabel, openSidebar, languageSelection, setAccessMessage } = this.props;
-    const { menuVisible, visibleDropdowns: { sendAndReceive, buyAndExchange, tools } } = this.state;
+    const { menuVisible, visibleDropdowns: { sendAndReceive, tools } } = this.state;
     const menuIcon = generateMenuIcon(menuVisible);
     const sendAndReceiveIcon = generateCaretIcon(sendAndReceive);
-    const buyAndExchangeIcon = generateCaretIcon(buyAndExchange);
     const toolsIcon = generateCaretIcon(tools);
 
     return (
@@ -92,20 +91,6 @@ class MobileHeader extends Component<Props> {
                         {LINKSET.SEND_AND_RECEIVE.map(item => (
                           <li key={item.to} onClick={this.toggleMenu}>
                             <Link to={item.to} onClick={() => setAccessMessage(item.accessMessage)}>
-                              {item.title}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </li>
-                  <li onClick={this.toggleBuyAndExchange}>
-                    {translateRaw('NEW_HEADER_TEXT_4')} <i className={buyAndExchangeIcon} />
-                    {buyAndExchange && (
-                      <ul className="MobileHeader-menu-subitems">
-                        {LINKSET.BUY_AND_EXCHANGE.map(item => (
-                          <li key={item.to} onClick={this.toggleMenu}>
-                            <Link to={item.to} onClick={() => setAccessMessage('')}>
                               {item.title}
                             </Link>
                           </li>
@@ -193,7 +178,6 @@ class MobileHeader extends Component<Props> {
     }));
 
   private toggleSendAndReceive = () => this.toggleDropdown('sendAndReceive');
-  private toggleBuyAndExchange = () => this.toggleDropdown('buyAndExchange');
   private toggleTools = () => this.toggleDropdown('tools');
 
   private attemptSetNodeFromQueryParameter = () => {
