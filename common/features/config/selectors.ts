@@ -1,6 +1,6 @@
 import difference from 'lodash/difference';
 
-import { InsecureWalletName, SecureWalletName, WalletName, walletNames } from 'config';
+import { InsecureWalletName, WalletName, walletNames } from 'config';
 import { SHAPESHIFT_TOKEN_WHITELIST } from 'api/shapeshift';
 import { stripWeb3Network, isAutoNodeConfig } from 'libs/nodes';
 import { getIsValidAddressFunction, getIsValidENSAddressFunction } from 'libs/validators';
@@ -156,14 +156,8 @@ export function isANetworkUnit(state: AppState, unit: string) {
 
 export function isWalletFormatSupportedOnNetwork(state: AppState, format: WalletName): boolean {
   const network = getStaticNetworkConfig(state);
-  const chainId = network ? network.chainId : 0;
 
-  const CHECK_FORMATS: types.DPathFormat[] = [
-    SecureWalletName.LEDGER_NANO_S,
-    SecureWalletName.TREZOR,
-    SecureWalletName.SAFE_T,
-    InsecureWalletName.MNEMONIC_PHRASE
-  ];
+  const CHECK_FORMATS: types.DPathFormat[] = [InsecureWalletName.MNEMONIC_PHRASE];
 
   const isHDFormat = (f: string): f is types.DPathFormat =>
     CHECK_FORMATS.includes(f as types.DPathFormat);
@@ -175,11 +169,6 @@ export function isWalletFormatSupportedOnNetwork(state: AppState, format: Wallet
     }
     const dPath = network.dPathFormats && network.dPathFormats[format];
     return !!dPath;
-  }
-
-  // Parity signer on RSK
-  if ((chainId === 30 || chainId === 31) && format === SecureWalletName.PARITY_SIGNER) {
-    return false;
   }
 
   // All other wallet formats are supported

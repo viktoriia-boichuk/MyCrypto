@@ -14,7 +14,7 @@ import {
 } from 'libs/scheduling';
 import { makeTransaction, getTransactionFields, IHexStrTransaction } from 'libs/transaction';
 import { stripHexPrefixAndLower } from 'libs/formatters';
-import { SecureWalletName, WalletName, getAddressMessage, AddressMessage } from 'config';
+import { WalletName, getAddressMessage, AddressMessage } from 'config';
 import { Token } from 'types/network';
 import { ICurrentTo, ICurrentValue, IGetTransaction } from './types';
 import { AppState } from './reducers';
@@ -44,7 +44,6 @@ export const isAnyOfflineWithWeb3 = (state: AppState): boolean => {
 // TODO: Convert to reselect selector (Issue #884)
 export function getDisabledWallets(state: AppState): any {
   const network = configSelectors.getNetworkConfig(state);
-  const isOffline = configMetaSelectors.getOffline(state);
   const disabledWallets: any = {
     wallets: [],
     reasons: {}
@@ -66,23 +65,6 @@ export function getDisabledWallets(state: AppState): any {
     configSelectors.unSupportedWalletFormatsOnNetwork(state),
     `This wallet doesn’t support the ${network.name} network`
   );
-
-  // Some wallets are unavailable offline
-  if (isOffline) {
-    addReason(
-      [SecureWalletName.WEB3, SecureWalletName.TREZOR, SecureWalletName.SAFE_T],
-      'This wallet cannot be accessed offline'
-    );
-  }
-
-  // Some wallets are disabled on certain platforms
-  if (process.env.BUILD_ELECTRON) {
-    addReason([SecureWalletName.WEB3], 'This wallet is not supported in the MyCrypto app');
-    addReason(
-      [SecureWalletName.SAFE_T],
-      'Coming soon. Please use the MyCrypto.com website in the meantime'
-    );
-  }
 
   // Dedupe and sort for consistency
   disabledWallets.wallets = disabledWallets.wallets

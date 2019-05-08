@@ -1,4 +1,4 @@
-import { InsecureWalletName, SecureWalletName } from 'config';
+import { InsecureWalletName } from 'config';
 import * as configMetaTypes from './meta/types';
 import * as configNetworksCustomTypes from './networks/custom/types';
 import * as configNetworksTypes from './networks/types';
@@ -31,8 +31,4 @@ export type ConfigAction =
   | NodeAction
   | configMetaTypes.MetaAction;
 
-export type DPathFormat =
-  | SecureWalletName.TREZOR
-  | SecureWalletName.SAFE_T
-  | SecureWalletName.LEDGER_NANO_S
-  | InsecureWalletName.MNEMONIC_PHRASE;
+export type DPathFormat = InsecureWalletName.MNEMONIC_PHRASE;

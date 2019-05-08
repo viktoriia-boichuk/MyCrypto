@@ -5,43 +5,24 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import isEmpty from 'lodash/isEmpty';
 
-import {
-  HardwareWalletName,
-  SecureWalletName,
-  InsecureWalletName,
-  MiscWalletName,
-  WalletName,
-  knowledgeBaseURL
-} from 'config';
+import { InsecureWalletName, MiscWalletName, WalletName, knowledgeBaseURL } from 'config';
 import translate, { translateRaw } from 'translations';
 import { isWeb3NodeAvailable } from 'libs/nodes/web3';
-import { wikiLink as paritySignerHelpLink } from 'libs/wallet/non-deterministic/parity';
 import { AppState } from 'features/reducers';
 import * as derivedSelectors from 'features/selectors';
 import { walletActions, walletSelectors } from 'features/wallet';
 import { transactionFieldsActions } from 'features/transaction';
 import { notificationsActions } from 'features/notifications';
-import LedgerIcon from 'assets/images/wallets/ledger.svg';
-import TrezorIcon from 'assets/images/wallets/trezor.svg';
-import SafeTIcon from 'assets/images/wallets/safe-t.svg';
-import ParitySignerIcon from 'assets/images/wallets/parity-signer.svg';
 import { Errorable } from 'components';
 import { Warning } from 'components/ui';
 import { DisabledWallets } from './disables';
-import { getWeb3ProviderInfo } from 'utils/web3';
 import {
   KeystoreDecrypt,
-  LedgerNanoSDecrypt,
   MnemonicDecrypt,
   PrivateKeyDecrypt,
   PrivateKeyValue,
-  TrezorDecrypt,
-  SafeTminiDecrypt,
   ViewOnlyDecrypt,
-  Web3Decrypt,
-  WalletButton,
-  ParitySignerDecrypt,
-  InsecureWalletWarning
+  WalletButton
 } from './components';
 import './WalletDecrypt.scss';
 
@@ -73,7 +54,6 @@ type Props = OwnProps & StateProps & DispatchProps & RouteComponentProps<{}>;
 type UnlockParams = {} | PrivateKeyValue;
 interface State {
   selectedWalletKey: WalletName | null;
-  isInsecureOverridden: boolean;
   value: UnlockParams | null;
 }
 
@@ -101,74 +81,18 @@ export interface MiscWalletInfo extends BaseWalletInfo {
   description: string;
 }
 
-type HardwareWallets = { [key in HardwareWalletName]: SecureWalletInfo };
-type SecureWallets = { [key in SecureWalletName]: SecureWalletInfo };
 type InsecureWallets = { [key in InsecureWalletName]: InsecureWalletInfo };
 type MiscWallet = { [key in MiscWalletName]: MiscWalletInfo };
-type Wallets = HardwareWallets & SecureWallets & InsecureWallets & MiscWallet;
+type Wallets = InsecureWallets & MiscWallet;
 
-const HARDWARE_WALLETS = Object.values(HardwareWalletName);
-/** @desc Hardware wallets are secure too, but we want to avoid duplication. */
-const SECURE_WALLETS = Object.values(SecureWalletName).filter(
-  value => !HARDWARE_WALLETS.includes(value)
-);
 const INSECURE_WALLETS = Object.values(InsecureWalletName);
 const MISC_WALLETS = Object.values(MiscWalletName);
-
-const web3info = getWeb3ProviderInfo();
 
 const WalletDecrypt = withRouter<Props>(
   class WalletDecryptClass extends Component<RouteComponentProps<{}> & Props, State> {
     // https://github.com/Microsoft/TypeScript/issues/13042
     // index signature should become [key: Wallets] (from config) once typescript bug is fixed
     public WALLETS: Wallets = {
-      [SecureWalletName.WEB3]: {
-        lid: web3info.lid,
-        icon: web3info.icon,
-        description: 'ADD_WEB3DESC',
-        component: Web3Decrypt,
-        initialParams: {},
-        unlock: this.props.unlockWeb3,
-        attemptUnlock: true,
-        helpLink: `${knowledgeBaseURL}/how-to/migrating/moving-from-mycrypto-to-metamask`
-      },
-      [SecureWalletName.LEDGER_NANO_S]: {
-        lid: 'X_LEDGER',
-        icon: LedgerIcon,
-        description: 'ADD_HARDWAREDESC',
-        component: LedgerNanoSDecrypt,
-        initialParams: {},
-        unlock: this.props.setWallet,
-        helpLink: 'https://support.ledger.com/hc/en-us/articles/360008268594'
-      },
-      [SecureWalletName.TREZOR]: {
-        lid: 'X_TREZOR',
-        icon: TrezorIcon,
-        description: 'ADD_HARDWAREDESC',
-        component: TrezorDecrypt,
-        initialParams: {},
-        unlock: this.props.setWallet,
-        helpLink: `${knowledgeBaseURL}/how-to/migrating/moving-from-mycrypto-to-trezor`
-      },
-      [SecureWalletName.SAFE_T]: {
-        lid: 'X_SAFE_T',
-        icon: SafeTIcon,
-        description: 'ADD_HARDWAREDESC',
-        component: SafeTminiDecrypt,
-        initialParams: {},
-        unlock: this.props.setWallet,
-        // TODO - Update with the right id once available
-        helpLink: 'https://www.archos.com/fr/products/crypto/faq.html'
-      },
-      [SecureWalletName.PARITY_SIGNER]: {
-        lid: 'X_PARITYSIGNER',
-        icon: ParitySignerIcon,
-        description: 'ADD_PARITY_DESC',
-        component: ParitySignerDecrypt,
-        initialParams: {},
-        unlock: this.props.setWallet,
-        helpLink: paritySignerHelpLink
-      },
       [InsecureWalletName.KEYSTORE_FILE]: {
         lid: 'X_KEYSTORE2',
         example: 'UTC--2017-12-15T17-35-22.547Z--6be6e49e82425a5aa56396db03512f2cc10e95e8',
@@ -213,7 +137,6 @@ const WalletDecrypt = withRouter<Props>(
 
     public state: State = {
       selectedWalletKey: null,
-      isInsecureOverridden: false,
       value: null
     };
 
@@ -243,31 +166,11 @@ const WalletDecrypt = withRouter<Props>(
     }
 
     public getDecryptionComponent() {
-      const { selectedWalletKey, isInsecureOverridden } = this.state;
+      const { selectedWalletKey } = this.state;
       const selectedWallet = this.getSelectedWallet();
 
       if (!selectedWalletKey || !selectedWallet) {
         return null;
-      }
-
-      const isInsecure = INSECURE_WALLETS.includes(selectedWalletKey);
-      if (isInsecure && !isInsecureOverridden && !process.env.BUILD_DOWNLOADABLE) {
-        return (
-          <div className="WalletDecrypt-decrypt">
-            <InsecureWalletWarning
-              walletType={translateRaw(selectedWallet.lid)}
-              onCancel={this.clearWalletChoice}
-            />
-            {process.env.NODE_ENV !== 'production' && (
-              <button
-                className="WalletDecrypt-decrypt-override"
-                onClick={this.overrideInsecureWarning}
-              >
-                I'm a dev, override this
-              </button>
-            )}
-          </div>
-        );
       }
 
       return (
@@ -287,7 +190,6 @@ const WalletDecrypt = withRouter<Props>(
                 selectedWallet.lid
               )} is not supported by your browser`}
               onError={this.clearWalletChoice}
-              shouldCatch={selectedWallet.lid === this.WALLETS.paritySigner.lid}
             >
               <selectedWallet.component
                 value={this.state.value}
@@ -329,42 +231,6 @@ const WalletDecrypt = withRouter<Props>(
             </div>
           )}
           <div className="WalletDecrypt-wallets-row">
-            {HARDWARE_WALLETS.map((walletType: SecureWalletName) => {
-              const wallet = this.WALLETS[walletType];
-              return (
-                <WalletButton
-                  key={walletType}
-                  name={translateRaw(wallet.lid)}
-                  description={translateRaw(wallet.description)}
-                  icon={wallet.icon}
-                  helpLink={wallet.helpLink}
-                  walletType={walletType}
-                  isSecure={true}
-                  isDisabled={this.isWalletDisabled(walletType)}
-                  disableReason={reasons[walletType]}
-                  onClick={this.handleWalletChoice}
-                />
-              );
-            })}
-          </div>
-          <div className="WalletDecrypt-wallets-row">
-            {SECURE_WALLETS.map((walletType: SecureWalletName) => {
-              const wallet = this.WALLETS[walletType];
-              return (
-                <WalletButton
-                  key={walletType}
-                  name={translateRaw(wallet.lid)}
-                  description={translateRaw(wallet.description)}
-                  icon={wallet.icon}
-                  helpLink={wallet.helpLink}
-                  walletType={walletType}
-                  isSecure={true}
-                  isDisabled={this.isWalletDisabled(walletType)}
-                  disableReason={reasons[walletType]}
-                  onClick={this.handleWalletChoice}
-                />
-              );
-            })}
             {MISC_WALLETS.map((walletType: MiscWalletName) => {
               const wallet = this.WALLETS[walletType];
               return (
@@ -502,12 +368,6 @@ const WalletDecrypt = withRouter<Props>(
     private isWalletDisabled = (walletKey: WalletName) => {
       return this.props.computedDisabledWallets.wallets.indexOf(walletKey) !== -1;
     };
-
-    private overrideInsecureWarning = () => {
-      if (process.env.NODE_ENV !== 'production') {
-        this.setState({ isInsecureOverridden: true });
-      }
-    };
   }
 );
 
@@ -537,7 +397,6 @@ export default connect(mapStateToProps, {
   unlockKeystore: walletActions.unlockKeystore,
   unlockMnemonic: walletActions.unlockMnemonic,
   unlockPrivateKey: walletActions.unlockPrivateKey,
-  unlockWeb3: walletActions.unlockWeb3,
   setWallet: walletActions.setWallet,
   resetTransactionRequested: transactionFieldsActions.resetTransactionRequested,
   showNotification: notificationsActions.showNotification

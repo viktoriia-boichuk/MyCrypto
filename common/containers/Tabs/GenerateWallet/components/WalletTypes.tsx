@@ -3,11 +3,7 @@ import { Link } from 'react-router-dom';
 import translate, { translateRaw } from 'translations';
 import { WalletType } from '../GenerateWallet';
 import { NewTabLink } from 'components/ui';
-import { ledgerReferralURL, trezorReferralURL } from 'config';
 import Template from './Template';
-import MetamaskIcon from 'assets/images/wallets/metamask.svg';
-import HardwareWalletIcon from 'assets/images/wallets/hardware.svg';
-import ParitySignerIcon from 'assets/images/wallets/parity-signer.svg';
 import FileIcon from 'assets/images/wallets/file.svg';
 import './WalletTypes.scss';
 
@@ -60,70 +56,7 @@ interface WalletSuggestion {
 }
 
 const WalletSuggestions: React.SFC<WalletSuggestionsProps> = ({ showGenerate }) => {
-  const suggestions: WalletSuggestion[] = [
-    {
-      name: translate('X_HARDWARE_WALLET'),
-      type: 'hardware',
-      icon: HardwareWalletIcon,
-      bullets: [
-        translate('WALLET_SUGGESTION_HARDWARE_1'),
-        translate('WALLET_SUGGESTION_HARDWARE_2'),
-        translate('WALLET_SUGGESTION_HARDWARE_3'),
-        translate('WALLET_SUGGESTION_HARDWARE_4')
-      ],
-      links: [
-        {
-          text: translate('LEDGER_REFERRAL_1'),
-          href: ledgerReferralURL
-        },
-        {
-          text: translate('TREZOR_REFERAL'),
-          href: trezorReferralURL
-        }
-      ]
-    },
-    {
-      name: translate('X_METAMASK'),
-      type: 'metamask',
-      icon: MetamaskIcon,
-      bullets: [
-        translate('WALLET_SUGGESTION_METAMASK_1'),
-        translate('WALLET_SUGGESTION_METAMASK_2'),
-        translate('WALLET_SUGGESTION_METAMASK_3'),
-        translate('WALLET_SUGGESTION_METAMASK_4'),
-        translate('WALLET_SUGGESTION_METAMASK_5')
-      ],
-      links: [
-        {
-          text: translate('ACTION_13', {
-            $thing: translateRaw('X_METAMASK')
-          }),
-          href: 'https://metamask.io/'
-        }
-      ]
-    },
-    {
-      name: translate('X_PARITYSIGNER'),
-      type: 'parity',
-      icon: ParitySignerIcon,
-      bullets: [
-        translate('WALLET_SUGGESTION_PARITYSIGNER_1'),
-        translate('WALLET_SUGGESTION_PARITYSIGNER_2'),
-        translate('WALLET_SUGGESTION_PARITYSIGNER_3'),
-        translate('WALLET_SUGGESTION_PARITYSIGNER_4')
-      ],
-      links: [
-        {
-          text: translate('DOWNLOAD_PHONE_APP', { $os: 'iOS' }),
-          href: 'https://itunes.apple.com/us/app/parity-signer/id1218174838'
-        },
-        {
-          text: translate('DOWNLOAD_PHONE_APP', { $os: 'Android' }),
-          href: 'https://play.google.com/store/apps/details?id=com.nativesigner'
-        }
-      ]
-    }
-  ];
+  const suggestions: WalletSuggestion[] = [];
 
   if (process.env.BUILD_DOWNLOADABLE) {
     suggestions[1] = {
@@ -151,14 +84,15 @@ const WalletSuggestions: React.SFC<WalletSuggestionsProps> = ({ showGenerate }) 
 
   return (
     <React.Fragment>
+      {/*todo: change the title*/}
       <h1 className="WalletTypes-title">{translate('GENERATE_WALLET_TITLE')}</h1>
-      <p className="WalletTypes-subtitle">{translate('GENERATE_WALLET_SUGGESTIONS')}</p>
 
       {!process.env.BUILD_DOWNLOADABLE && (
         <React.Fragment>
           <div className="WalletTypes-download">
             <NewTabLink
-              href="https://download.mycrypto.com"
+              //todo: change the link
+              href=""
               className="WalletTypes-download-button btn btn-primary btn-lg"
             >
               {translate('WALLET_SUGGESTION_DESKTOP_APP')}
@@ -167,8 +101,6 @@ const WalletSuggestions: React.SFC<WalletSuggestionsProps> = ({ showGenerate }) 
               {translate('WALLET_SUGGESTION_DESKTOP_APP_DESC')}
             </p>
           </div>
-
-          <div className="WalletTypes-divider">{translate('OR')}</div>
         </React.Fragment>
       )}
 
