@@ -1,5 +1,5 @@
 import { MenuItemConstructorOptions, shell } from 'electron';
-import { APP_TITLE, REPOSITORY } from '../constants';
+import { APP_TITLE } from '../constants';
 import packageJson from '../../package.json';
 
 const MENU: MenuItemConstructorOptions[] = [
@@ -50,7 +50,7 @@ const HELP_MENU: MenuItemConstructorOptions = {
     {
       label: 'Report a Bug',
       click() {
-        shell.openExternal(`${REPOSITORY}/issues/new`);
+        shell.openExternal('https://forum.auxilium.global/t/report-a-bug/2126');
       }
     }
   ]
