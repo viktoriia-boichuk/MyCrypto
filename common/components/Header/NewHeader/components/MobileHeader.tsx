@@ -140,7 +140,7 @@ class MobileHeader extends Component<Props> {
                 <ul className="MobileHeader-menu-bottom">
                   <li>
                     <a
-                      href="https://support.mycrypto.com/"
+                      href="https://forum.auxilium.global/c/support/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

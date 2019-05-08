@@ -13,7 +13,7 @@ const LINK_COLUMNS = [
       },
       {
         title: translateRaw('NEW_FOOTER_TEXT_7'),
-        link: 'https://support.mycrypto.com/'
+        link: 'https://forum.auxilium.global/c/support/'
       },
       {
         title: translateRaw('NEW_FOOTER_TEXT_8'),
