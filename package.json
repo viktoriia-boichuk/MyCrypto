@@ -1,10 +1,13 @@
 {
-  "name": "MyCrypto",
-  "author": "MyCryptoHQ",
-  "version": "1.6.4",
+  "name": "Auxilium",
+  "author": "Auxilium Team <wallet@auxilium.global>",
+  "version": "0.1.0",
   "main": "main.js",
-  "description": "MyCrypto is a free, open-source interface for interacting with the blockchain",
-  "repository": "https://github.com/MyCryptoHQ/MyCrypto",
+  "description": "Auxilium is a free, open-source interface for interacting with the blockchain",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/auxiliumglobal/MyCrypto"
+  },
   "engines": {
     "node": ">= 8.0.0",
     "npm": ">= 5.0.0"

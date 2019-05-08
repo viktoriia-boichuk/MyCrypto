@@ -8,8 +8,8 @@ const LINK_COLUMNS = [
     heading: translateRaw('NEW_FOOTER_TEXT_6'),
     links: [
       {
-        title: 'MyCrypto.com',
-        link: 'https://www.mycrypto.com/'
+        title: 'Auxilium Global',
+        link: 'https://auxilium.global/'
       },
       {
         title: translateRaw('NEW_FOOTER_TEXT_7'),
@@ -17,7 +17,7 @@ const LINK_COLUMNS = [
       },
       {
         title: translateRaw('NEW_FOOTER_TEXT_8'),
-        link: 'https://about.mycrypto.com/'
+        link: 'https://auxilium.global/team/'
       },
       {
         title: translateRaw('NEW_FOOTER_TEXT_9'),
@@ -25,7 +25,8 @@ const LINK_COLUMNS = [
       },
       {
         title: translateRaw('NEW_FOOTER_TEXT_10'),
-        link: 'https://about.mycrypto.com/privacy/'
+        link:
+          'https://auxilium.global/wp-content/uploads/2018/11/Auxilium-Global-Privacy-Policy.pdf'
       }
     ]
   },

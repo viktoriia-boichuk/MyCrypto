@@ -41,8 +41,8 @@ async function build() {
       x64: true,
       ia32: true,
       config: {
-        appId: 'com.github.mycrypto.mycryptohq',
-        productName: 'MyCrypto',
+        appId: 'com.github.auxiliumglobal.auxilium',
+        productName: 'Auxilium',
         directories: {
           app: jsBuildDir,
           output: electronBuildsDir

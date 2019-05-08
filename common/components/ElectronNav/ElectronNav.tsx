@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import classnames from 'classnames';
 import translate from 'translations';
-import { navigationLinks, Theme } from 'config';
+import { navigationLinks } from 'config';
 import NavigationLink from 'components/NavigationLink';
 import NetworkSelect from './NetworkSelect';
 import LanguageSelect from './LanguageSelect';
@@ -43,7 +43,7 @@ class ElectronNav extends React.Component<Props, State> {
         })}
       >
         <div className="ElectronNav-branding">
-          <div className="ElectronNav-branding-logo" onClick={this.toggleTheme} />
+          <div className="ElectronNav-branding-logo" onClick={this.openWebsite} />
         </div>
 
         <ul className="ElectronNav-links">
@@ -114,10 +114,9 @@ class ElectronNav extends React.Component<Props, State> {
     }, 300);
   };
 
-  private toggleTheme = () => {
-    const theme = this.props.theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT;
-    this.props.changeTheme(theme);
-  };
+  private openWebsite() {
+    window.open('https://auxilium.global/');
+  }
 }
 
 export default connect(
