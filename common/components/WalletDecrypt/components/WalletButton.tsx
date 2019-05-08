@@ -40,7 +40,6 @@ export class WalletButton extends React.PureComponent<Props> {
       description,
       example,
       icon,
-      helpLink,
       isSecure,
       isReadOnly,
       isDisabled,
@@ -53,28 +52,6 @@ export class WalletButton extends React.PureComponent<Props> {
         icon: 'eye',
         tooltip: translateRaw('TOOLTIP_READ_ONLY_WALLET'),
         arialabel: 'Read Only'
-      });
-    } else {
-      if (isSecure) {
-        icons.push({
-          icon: 'shield',
-          tooltip: translateRaw('TOOLTIP_SECURE_WALLET_TYPE'),
-          arialabel: 'Secure wallet type'
-        });
-      } else {
-        icons.push({
-          icon: 'exclamation-triangle',
-          tooltip: translateRaw('TOOLTIP_INSECURE_WALLET_TYPE'),
-          arialabel: 'Insecure wallet type'
-        });
-      }
-    }
-    if (helpLink) {
-      icons.push({
-        icon: 'question-circle',
-        tooltip: translateRaw('TOOLTIP_MORE_INFO'),
-        href: helpLink,
-        arialabel: 'More info'
       });
     }
 
