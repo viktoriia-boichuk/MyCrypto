@@ -18,32 +18,32 @@ export const DOWNLOAD_MYCRYPTO_LINK = 'https://download.mycrypto.com/';
 
 export const socialMediaLinks: Link[] = [
   {
-    link: 'https://twitter.com/mycrypto',
+    link: 'https://twitter.com/auxiliumglobal',
     text: 'twitter'
   },
   {
-    link: 'https://www.facebook.com/mycryptoHQ/',
+    link: 'https://www.facebook.com/auxiliumglobal',
     text: 'facebook'
   },
   {
-    link: 'https://medium.com/@mycrypto',
+    link: 'https://medium.com/@auxiliumglobal',
     text: 'medium'
   },
   {
-    link: 'https://www.linkedin.com/company/mycrypto',
-    text: 'linkedin'
-  },
-  {
-    link: 'https://github.com/MyCryptoHQ',
+    link: 'https://github.com/auxiliumglobal',
     text: 'github'
-  },
-  {
-    link: 'https://www.reddit.com/r/mycrypto/',
-    text: 'reddit'
   },
   {
     link: discordURL,
     text: 'discord'
+  },
+  {
+    link: 'https://t.me/auxiliumcommunity',
+    text: 'telegram'
+  },
+  {
+    link: 'https://forum.auxilium.global/',
+    text: 'auxilium_forum'
   }
 ];
 

@@ -9,7 +9,7 @@ import './SocialsAndLegal.scss';
 const SocialMediaLink = ({ link, text }: { link: string; text: string }) => {
   return (
     <NewTabLink className="SocialMediaLink" key={link} href={link} aria-label={text}>
-      <i className={`sm-icon sm-logo-${text}`} />
+      <img width="20px" height="20px" src={require(`common/assets/images/socials/${text}.svg`)} />
     </NewTabLink>
   );
 };
@@ -39,7 +39,7 @@ class Legal extends Component {
     return (
       <React.Fragment>
         <section className="Legal">
-          <p>© {new Date().getFullYear()} MyCrypto, Inc.</p>
+          <p>© {new Date().getFullYear()} Auxilium Global</p>
           <a onClick={this.toggleModal}>{translateRaw('DISCLAIMER')}</a>
           <p>{VERSION}</p>
         </section>

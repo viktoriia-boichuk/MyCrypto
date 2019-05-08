@@ -166,7 +166,7 @@ describe('current selector', () => {
     fields: {
       ...state.transaction.fields,
       to: {
-        raw: '0x4bbeEB066eD09B7AEd07bF39EEe0460DFa261520',
+        raw: '0x2057766A11b7B479c6AF6e75d51eCD1eeaa79D16',
         value: new Buffer([0, 1, 2, 3])
       },
       gasLimit: {

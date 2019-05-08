@@ -6,7 +6,7 @@ import { makeExplorer } from 'utils/helpers';
 import translate from 'translations';
 
 export const languages = require('./languages.json');
-export const discordURL = 'https://discord.gg/VSaTXEA';
+export const discordURL = 'https://discord.gg/59PXRM8';
 
 // Displays in the footer
 export const VERSION = packageJson.version;
@@ -36,8 +36,8 @@ export const etherChainExplorerInst = makeExplorer({
 });
 
 export const donationAddressMap = {
-  BTC: '32oirLEzZRhi33RCXDF9WHJjEb8RsrSss3',
-  ETH: '0x4bbeEB066eD09B7AEd07bF39EEe0460DFa261520',
+  BTC: '3Hkcxxhdf5DcdrpF5P17XtTxAd1xd67gCM',
+  ETH: '0x2057766A11b7B479c6AF6e75d51eCD1eeaa79D16',
   REP: '0x4bbeEB066eD09B7AEd07bF39EEe0460DFa261520',
   XMR:
     '4GdoN7NCTi8a5gZug7PrwZNKjvHFmKeV11L6pNJPgj5QNEHsN6eeX3DaAQFwZ1ufD4LYCZKArktt113W7QjWvQ7CW7F7tDFvS511SNfZV7'

@@ -14,7 +14,7 @@ export const ADDRESS_MESSAGES: { [key: string]: AddressMessage } = {
     msg:
       'This address has been associated with an issue with the Ledger Chrome App. Do not send to this address. Monitor [their Twitter account](https://twitter.com/LedgerHQ) for updates.'
   },
-  '0x4bbeEB066eD09B7AEd07bF39EEe0460DFa261520': {
+  '0x2057766A11b7B479c6AF6e75d51eCD1eeaa79D16': {
     msg: 'Thank you for donating to Auxilium. TO THE MOON!'
   },
   '0x75aa7b0d02532f3833b66c7f0ad35376d373ddf8': {

@@ -92,7 +92,7 @@ export default class Footer extends React.PureComponent<Props, State> {
 
             <div className="Footer-about-legal">
               <div className="Footer-about-legal-text">
-                © {new Date().getFullYear()} MyCrypto, Inc.
+                © {new Date().getFullYear()} Auxilium Global
               </div>
               <div className="Footer-about-legal-text">
                 <a onClick={this.toggleModal}>{translateRaw('DISCLAIMER')}</a>

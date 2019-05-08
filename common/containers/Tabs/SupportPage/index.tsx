@@ -1,12 +1,6 @@
 import React from 'react';
 
-import {
-  donationAddressMap,
-  socialMediaLinks,
-  productLinks,
-  affiliateLinks,
-  VERSION
-} from 'config';
+import { donationAddressMap, socialMediaLinks, VERSION } from 'config';
 import translate from 'translations';
 import TabSection from 'containers/TabSection';
 import DisclaimerModal from 'components/DisclaimerModal';
@@ -41,54 +35,24 @@ export default class SupportPage extends React.Component<{}, State> {
                       href={link.link}
                       aria-label={link.text}
                     >
-                      <i className={`sm-icon sm-logo-${link.text}`} />
+                      <img
+                        width="20px"
+                        height="20px"
+                        src={require(`common/assets/images/socials_desktop/${link.text}.svg`)}
+                      />
                     </NewTabLink>
                   ))}
                 </div>
 
                 <div className="SupportPage-mycrypto-legal">
                   <div className="SupportPage-mycrypto-legal-text">
-                    © {new Date().getFullYear()} MyCrypto, Inc.
+                    © {new Date().getFullYear()} Auxilium Global
                   </div>
                   <div className="SupportPage-mycrypto-legal-text">
                     <a onClick={this.openDisclaimer}>{translate('DISCLAIMER')}</a>
                   </div>
                   <div className="SupportPage-mycrypto-legal-text">v{VERSION}</div>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="row">
-            <div className="col-md-6 col-sm-6 col-xs-12">
-              <div className="SupportPage-products Tab-content-pane">
-                <h3 className="SupportPage-products-title">{translate('FOOTER_OTHER_APPS')}</h3>
-
-                {productLinks.map(link => (
-                  <NewTabLink
-                    className="SupportPage-products-link btn btn-block btn-default"
-                    href={link.link}
-                  >
-                    {link.text}
-                  </NewTabLink>
-                ))}
-              </div>
-            </div>
-
-            <div className="col-md-6 col-sm-6 col-xs-12">
-              <div className="SupportPage-affiliates Tab-content-pane">
-                <h3 className="SupportPage-affiliates-title">
-                  {translate('FOOTER_AFFILIATE_TITLE')}
-                </h3>
-
-                {affiliateLinks.map(link => (
-                  <NewTabLink
-                    className="SupportPage-affiliates-link btn btn-block btn-default"
-                    href={link.link}
-                  >
-                    {link.text}
-                  </NewTabLink>
-                ))}
               </div>
             </div>
           </div>
