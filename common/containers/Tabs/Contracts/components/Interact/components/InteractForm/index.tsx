@@ -10,7 +10,7 @@ import { AppState } from 'features/reducers';
 import * as selectors from 'features/selectors';
 import { configSelectors } from 'features/config';
 import { setCurrentTo, TSetCurrentTo } from 'features/transaction/actions';
-import { Input, TextArea, CodeBlock, Dropdown } from 'components/ui';
+import { Input, TextArea, CodeBlock } from 'components/ui';
 import { AddressFieldFactory } from 'components/AddressFieldFactory';
 
 interface ContractOption {
@@ -77,46 +77,18 @@ class InteractForm extends Component<Props, State> {
   };
 
   public render() {
-    const { contracts, accessContract, currentTo, isValidAddress } = this.props;
+    const { accessContract, currentTo, isValidAddress } = this.props;
     const { abiJson, contract } = this.state;
     const validEthAddress = isValidAddress(
       currentTo.value ? addHexPrefix(currentTo.value.toString('hex')) : ''
     );
     const validAbiJson = isValidAbiJson(abiJson);
     const showContractAccessButton = validEthAddress && validAbiJson;
-    let options: ContractOption[] = [];
-
-    if (this.isContractsValid()) {
-      const contractOptions = contracts.map(con => {
-        const addr = con.address ? `(${con.address.substr(0, 10)}...)` : '';
-        return {
-          name: `${con.name} ${addr}`,
-          value: this.makeContractValue(con)
-        };
-      });
-      options = [{ name: 'Custom', value: '' }, ...contractOptions];
-    }
 
     // TODO: Use common components for abi json
     return (
       <div className="InteractForm">
         <div className="InteractForm-address row">
-          <div className="input-group-wrapper InteractForm-address-field col-sm-6">
-            <label className="input-group">
-              <div className="input-group-header">{translate('CONTRACT_TITLE_2')}</div>
-              <Dropdown
-                className={`${!contract ? 'invalid' : ''}`}
-                value={contract as any}
-                placeholder={this.state.contractPlaceholder}
-                onChange={this.handleSelectContract}
-                options={options}
-                searchable={true}
-                clearable={true}
-                labelKey="name"
-              />
-            </label>
-          </div>
-
           <div className="input-group-wrapper InteractForm-address-field col-sm-6">
             <AddressFieldFactory
               withProps={({ isValid, onChange }) => (
@@ -182,31 +154,6 @@ class InteractForm extends Component<Props, State> {
     this.props.resetState();
     this.setState({ [name]: ev.currentTarget.value } as any);
   };
-
-  private handleSelectContract = (contract: ContractOption) => {
-    this.props.resetState();
-    const fullContract = this.props.contracts.find(currContract => {
-      return contract && this.makeContractValue(currContract) === contract.value;
-    });
-
-    if (fullContract) {
-      this.props.setCurrentTo(fullContract.address || '');
-      this.setState({
-        abiJson: fullContract.abi || '',
-        contract
-      });
-    } else {
-      this.props.setCurrentTo('');
-      this.setState({
-        abiJson: '',
-        contract
-      });
-    }
-  };
-
-  private makeContractValue(contract: NetworkContract) {
-    return `${contract.name}:${contract.address}`;
-  }
 }
 
 const mapStateToProps = (state: AppState) => ({
