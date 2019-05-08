@@ -1,7 +1,7 @@
 import React from 'react';
 
 import translate from 'translations';
-import logo from 'assets/images/logo-mycrypto.svg';
+import logo from 'assets/images/AUXILIUM_Logo_RGB.svg';
 import ThemeToggle from 'components/Footer/ThemeToggle';
 import SocialsAndLegal from './SocialsAndLegal';
 import './LogoBox.scss';

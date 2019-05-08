@@ -49,16 +49,16 @@ async function build() {
         },
         mac: {
           category: 'public.app-category.finance',
-          icon: path.join(config.path.electron, 'icons/icon.icns'),
+          icon: path.join(config.path.electron, 'icons/Auxilium_logo.icns'),
           compression
         },
         win: {
-          icon: path.join(config.path.electron, 'icons/icon.ico'),
+          icon: path.join(config.path.electron, 'icons/Auxilium_logo.ico'),
           compression
         },
         linux: {
           category: 'Finance',
-          icon: path.join(config.path.electron, 'icons/icon.png'),
+          icon: path.join(config.path.electron, 'icons/Auxilium_logo.png'),
           compression
         },
         // IMPORTANT: Prevents from auto publishing to GitHub in CI environments
