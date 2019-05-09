@@ -3,9 +3,9 @@ import * as actions from './actions';
 import { selectedNodeReducer } from './reducer';
 
 export const expectedState = {
-  initialState: { nodeId: 'eth_mycrypto', prevNode: 'eth_mycrypto', pending: false },
-  nodeChange: { nodeId: 'nodeToChangeTo', prevNode: 'eth_auto', pending: false },
-  nodeChangeIntent: { nodeId: 'eth_mycrypto', prevNode: 'eth_mycrypto', pending: true }
+  initialState: { nodeId: 'aux_auxilium', prevNode: 'aux_auxilium', pending: false },
+  nodeChange: { nodeId: 'nodeToChangeTo', prevNode: 'aux_auto', pending: false },
+  nodeChangeIntent: { nodeId: 'aux_auxilium', prevNode: 'aux_auxilium', pending: true }
 };
 
 export const actionsToDispatch = {
@@ -13,7 +13,7 @@ export const actionsToDispatch = {
     nodeId: 'nodeToChangeTo',
     networkId: 'networkToChangeTo'
   }),
-  changeNodeRequested: actions.changeNodeRequested('eth_mycrypto')
+  changeNodeRequested: actions.changeNodeRequested('aux_auxilium')
 };
 
 describe('selected node reducer', () => {

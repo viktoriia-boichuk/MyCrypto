@@ -3,6 +3,11 @@ export const ETH_DEFAULT: DPath = {
   value: "m/44'/60'/0'/0"
 };
 
+export const AUX_DEFAULT: DPath = {
+  label: 'Default (AUX)',
+  value: "m/44'/60'/0'/0"
+};
+
 export const ETH_TREZOR: DPath = {
   label: 'TREZOR (ETH)',
   value: "m/44'/60'/0'/0"
@@ -175,6 +180,7 @@ export const METADIUM_DEFAULT: DPath = {
 
 export const DPaths: DPath[] = [
   ETH_DEFAULT,
+  AUX_DEFAULT,
   ETH_TREZOR,
   ETH_SAFE_T,
   ETH_LEDGER,

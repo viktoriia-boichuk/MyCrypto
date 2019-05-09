@@ -11,7 +11,7 @@ import * as selectors from './selectors';
 import * as sagas from './sagas';
 
 const networkState = configNetworksStaticReducer.staticNetworksReducer(undefined, {} as any);
-const network = networkState.ETH;
+const network = networkState.AUX;
 const nonEstimateNetwork = networkState.ETC;
 
 describe('fetchEstimates*', () => {

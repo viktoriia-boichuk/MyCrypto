@@ -4,7 +4,6 @@ import classnames from 'classnames';
 import translate from 'translations';
 import { navigationLinks } from 'config';
 import NavigationLink from 'components/NavigationLink';
-import NetworkSelect from './NetworkSelect';
 import LanguageSelect from './LanguageSelect';
 import NetworkStatus from './NetworkStatus';
 import { configMetaActions, configMetaSelectors } from 'features/config';
@@ -63,10 +62,6 @@ class ElectronNav extends React.Component<Props, State> {
             Change Language
             <i className="ElectronNav-controls-btn-icon fa fa-arrow-circle-right" />
           </button>
-          <button className="ElectronNav-controls-btn" onClick={this.openNodeSelect}>
-            Change Network
-            <i className="ElectronNav-controls-btn-icon fa fa-arrow-circle-right" />
-          </button>
         </div>
 
         <div className="ElectronNav-status">
@@ -86,14 +81,6 @@ class ElectronNav extends React.Component<Props, State> {
 
   private openLanguageSelect = () => {
     const panelContent = <LanguageSelect closePanel={this.closePanel} />;
-    this.setState({
-      panelContent,
-      isPanelOpen: true
-    });
-  };
-
-  private openNodeSelect = () => {
-    const panelContent = <NetworkSelect closePanel={this.closePanel} />;
     this.setState({
       panelContent,
       isPanelOpen: true

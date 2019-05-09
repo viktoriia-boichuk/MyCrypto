@@ -430,7 +430,7 @@
     "WALLET_SUGGESTION_GENERATE_3": "Compatible with almost all wallets",
     "WALLET_SUGGESTION_GENERATE_4": "Free to generate",
     "WALLET_SUGGESTION_GENERATE_5": "Make sure to keep a copy of your private key, keystore file and/or mnemonic phrase in a safe offline space",
-    "WALLET_SUGGESTION_DESKTOP_APP": "Download the MyCrypto Desktop App",
+    "WALLET_SUGGESTION_DESKTOP_APP": "Download the Auxilium Desktop App",
     "WALLET_SUGGESTION_DESKTOP_APP_DESC": "Where you can generate your own private key in a secure, sandboxed environment",
     "PREFOOTER_WARNING": "MyCrypto.com does not hold your keys for you. We cannot access accounts, recover keys, reset passwords, nor reverse transactions. Protect your keys & always check that you are on the correct URL.",
     "PREFOOTER_SECURITY_WARNING": "You are responsible for your security.",

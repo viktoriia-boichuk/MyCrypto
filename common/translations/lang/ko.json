@@ -430,7 +430,7 @@
     "WALLET_SUGGESTION_GENERATE_3": "거의 모든 지갑과 호환됩니다",
     "WALLET_SUGGESTION_GENERATE_4": "무료 생성",
     "WALLET_SUGGESTION_GENERATE_5": "보통 피싱과 해킹의 대상이 됩니다",
-    "WALLET_SUGGESTION_DESKTOP_APP": "MyCrypto 데스크탑 앱 다운로드",
+    "WALLET_SUGGESTION_DESKTOP_APP": "Auxilium 데스크탑 앱 다운로드",
     "WALLET_SUGGESTION_DESKTOP_APP_DESC": "안전한, 샌드박스된 환경에서 개인 키를 생성할 수 있습니다",
     "PREFOOTER_WARNING": "MyCrypto.com 사이트는 키를 보존하지 않습니다. 저희는 계정 접근, 키 복구, 비밀번호 초기화 및 트랜잭션 되돌리기를 지원하지 않습니다. 키를 잘 보존하고, 정확한 URL로 접속했는지 항상 확인하세요.",
     "PREFOOTER_SECURITY_WARNING": "보안에 대한 책임은 모두 당신에게 있습니다.",

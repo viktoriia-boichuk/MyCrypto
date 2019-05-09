@@ -201,7 +201,7 @@ describe('handleChangeNodeRequestedOneTime', () => {
 });
 
 describe('unsetWeb3Node*', () => {
-  const previousNodeId = 'eth_mycrypto';
+  const previousNodeId = 'aux_auxilium';
   const mockNodeId = 'web3';
   const gen = sagas.unsetWeb3Node();
 
@@ -237,7 +237,7 @@ describe('unsetWeb3Node*', () => {
 describe('unsetWeb3NodeOnWalletEvent*', () => {
   const fakeAction: any = {};
   const mockNodeId = 'web3';
-  const previousNodeId = 'eth_mycrypto';
+  const previousNodeId = 'aux_auxilium';
   const gen = sagas.unsetWeb3NodeOnWalletEvent(fakeAction);
 
   it('should select getNode', () => {
