@@ -3,7 +3,7 @@
 
 // Prefer pixels of rem in this file, Electron shouldn't be responsive in the
 // same way the content is.
-$branding-spacing-top: 12px;
+$branding-spacing: 10px;
 $back-spacing: 10px;
 
 .ElectronNav {
@@ -17,23 +17,22 @@ $back-spacing: 10px;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    padding-top: $branding-spacing-top;
+    padding: $branding-spacing;
     background: color(control-bg);
     z-index: 1;
     border-bottom: 1px solid shade-dark(0.1);
 
     .is-osx & {
-      padding-top: $electron-osx-control-spacing + $branding-spacing-top - 5;
+      padding-top: $electron-osx-control-spacing + $branding-spacing - 5;
     }
 
     &-logo {
       margin-left: -1px;
       height: 35px;
-      margin-bottom: 10px;
       background-image: url('~assets/images/AUXILIUM_Logo_RGB.svg');
       background-position: center;
       background-repeat: no-repeat;
-      background-size: auto 100%;
+      background-size: 100% 100%;
       cursor: pointer;
 
       @include theme(dark) {
