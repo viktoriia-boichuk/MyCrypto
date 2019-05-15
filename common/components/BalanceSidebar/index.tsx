@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 
 import { AppState } from 'features/reducers';
 import { walletSelectors } from 'features/wallet';
-import EquivalentValues from './EquivalentValues';
 import AccountInfo from './AccountInfo';
-import Promos from './Promos';
 import TokenBalances from './TokenBalances';
 
 interface Block {
@@ -32,17 +30,8 @@ export class BalanceSidebar extends React.Component<StateProps> {
         content: <AccountInfo wallet={wallet} />
       },
       {
-        name: 'Promos',
-        isFullWidth: true,
-        content: <Promos />
-      },
-      {
         name: 'Token Balances',
         content: <TokenBalances />
-      },
-      {
-        name: 'Equivalent Values',
-        content: <EquivalentValues />
       }
     ];
 
