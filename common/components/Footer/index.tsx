@@ -11,10 +11,7 @@ import {
   affiliateLinks,
   partnerLinks
 } from 'config';
-import DisclaimerModal from 'components/DisclaimerModal';
 import { NewTabLink } from 'components/ui';
-import PreFooter from './PreFooter';
-import ThemeToggle from './ThemeToggle';
 import './index.scss';
 
 const SocialMediaLink = ({ link, text }: { link: string; text: string }) => {
@@ -41,7 +38,6 @@ export default class Footer extends React.PureComponent<Props, State> {
   public render() {
     return (
       <div>
-        <PreFooter openModal={this.toggleModal} />
         <footer className="Footer" role="contentinfo" aria-label="footer">
           <div className="Footer-links Footer-section">
             <div className="Footer-links-social">
@@ -95,13 +91,9 @@ export default class Footer extends React.PureComponent<Props, State> {
                 © {new Date().getFullYear()} Auxilium Global
               </div>
               <div className="Footer-about-legal-text">
-                <a onClick={this.toggleModal}>{translateRaw('DISCLAIMER')}</a>
+                <a onClick={this.openTermsAndServices}>{translateRaw('DISCLAIMER')}</a>
               </div>
               <div className="Footer-about-legal-text">v{VERSION}</div>
-            </div>
-
-            <div className="Footer-about-theme">
-              <ThemeToggle />
             </div>
           </div>
 
@@ -138,14 +130,13 @@ export default class Footer extends React.PureComponent<Props, State> {
             </div>
           </div>
         </footer>
-        <DisclaimerModal isOpen={this.state.isDisclaimerOpen} handleClose={this.toggleModal} />
       </div>
     );
   }
 
-  private toggleModal = () => {
-    this.setState(state => ({
-      isDisclaimerOpen: !state.isDisclaimerOpen
-    }));
-  };
+  private openTermsAndServices() {
+    window.open(
+      'https://auxilium.global/wp-content/uploads/2018/11/Auxilium-Global-Privacy-Policy.pdf'
+    );
+  }
 }

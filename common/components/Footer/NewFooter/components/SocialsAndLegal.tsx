@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { socialMediaLinks, VERSION } from 'config';
 import { translateRaw } from 'translations';
 import { NewTabLink } from 'components/ui';
-import DisclaimerModal from 'components/DisclaimerModal';
 import './SocialsAndLegal.scss';
 
 const SocialMediaLink = ({ link, text }: { link: string; text: string }) => {
@@ -34,24 +33,22 @@ class Legal extends Component {
   };
 
   public render() {
-    const { modalOpen } = this.state;
-
     return (
       <React.Fragment>
         <section className="Legal">
           <p>© {new Date().getFullYear()} Auxilium Global</p>
-          <a onClick={this.toggleModal}>{translateRaw('DISCLAIMER')}</a>
+          <a onClick={this.openTermsAndServices}>{translateRaw('DISCLAIMER')}</a>
           <p>{VERSION}</p>
         </section>
-        <DisclaimerModal isOpen={modalOpen} handleClose={this.toggleModal} />
       </React.Fragment>
     );
   }
 
-  private toggleModal = () =>
-    this.setState((prevState: LegalState) => ({
-      modalOpen: !prevState.modalOpen
-    }));
+  private openTermsAndServices() {
+    window.open(
+      'https://auxilium.global/wp-content/uploads/2018/11/Auxilium-Global-Privacy-Policy.pdf'
+    );
+  }
 }
 
 export default function SocialsAndLegal() {

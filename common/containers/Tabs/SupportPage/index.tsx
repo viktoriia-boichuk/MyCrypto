@@ -3,7 +3,6 @@ import React from 'react';
 import { donationAddressMap, socialMediaLinks, VERSION } from 'config';
 import translate from 'translations';
 import TabSection from 'containers/TabSection';
-import DisclaimerModal from 'components/DisclaimerModal';
 import { NewTabLink } from 'components/ui';
 import './index.scss';
 
@@ -49,7 +48,7 @@ export default class SupportPage extends React.Component<{}, State> {
                     © {new Date().getFullYear()} Auxilium Global
                   </div>
                   <div className="SupportPage-mycrypto-legal-text">
-                    <a onClick={this.openDisclaimer}>{translate('DISCLAIMER')}</a>
+                    <a onClick={this.openTermsAndServices}>{translate('DISCLAIMER')}</a>
                   </div>
                   <div className="SupportPage-mycrypto-legal-text">v{VERSION}</div>
                 </div>
@@ -84,12 +83,13 @@ export default class SupportPage extends React.Component<{}, State> {
             </div>
           </div>
         </div>
-
-        <DisclaimerModal isOpen={this.state.isDisclaimerOpen} handleClose={this.closeDisclaimer} />
       </TabSection>
     );
   }
 
-  private openDisclaimer = () => this.setState({ isDisclaimerOpen: true });
-  private closeDisclaimer = () => this.setState({ isDisclaimerOpen: false });
+  private openTermsAndServices() {
+    window.open(
+      'https://auxilium.global/wp-content/uploads/2018/11/Auxilium-Global-Privacy-Policy.pdf'
+    );
+  }
 }
