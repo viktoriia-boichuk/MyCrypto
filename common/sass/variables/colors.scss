@@ -1,8 +1,9 @@
-$brand-primary: #007896;
+$brand-primary: #35395c;
 $brand-info: #163151;
 $brand-success: #5dba5a;
 $brand-warning: #ff9800;
 $brand-danger: #db5846;
+$brand-pink: #e61e7e;
 
 $dark-rgb: 0, 0, 0;
 $light-rgb: 255, 255, 255;
@@ -57,6 +58,12 @@ $theme-light: (
   brand-danger-light: lighten($brand-danger, 6%),
   brand-danger-lighter: lighten($brand-danger, 12%),
 
+  brand-pink: $brand-pink,
+  brand-pink-dark: darken($brand-pink, 6%),
+  brand-pink-darker: darken($brand-pink, 12%),
+  brand-pink-light: lighten($brand-pink, 6%),
+  brand-pink-lighter: lighten($brand-pink, 12%),
+
   white-clear: rgba(#fff, 0.8),
   white-clearer: rgba(#fff, 0.7),
   white-clearest: rgba(#fff, 0.6),
@@ -70,8 +77,11 @@ $theme-light: (
   text-color: $gray-dark,
   text-color-inverted: #fff,
 
-  link-color: $brand-primary,
-  link-hover-color: darken($brand-primary, 10%),
+  sidebar-link-color: $brand-primary,
+  sidebar-link-hover-color: darken($brand-primary, 10%),
+
+  link-color: $brand-pink,
+  link-hover-color: darken($brand-pink, 10%),
 
   tab-color: $brand-info,
   tab-border: #ececec,

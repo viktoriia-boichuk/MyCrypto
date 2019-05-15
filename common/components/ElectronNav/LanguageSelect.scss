@@ -14,11 +14,11 @@
     text-align: left;
 
     &:hover {
-      color: color(link-hover-color);
+      color: color(sidebar-link-hover-color);
     }
 
     &.is-selected {
-      color: color(link-color);
+      color: color(sidebar-link-color);
       background: color(gray-lightest);
     }
   }

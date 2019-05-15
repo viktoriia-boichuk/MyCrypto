@@ -150,12 +150,12 @@ $back-spacing: 10px;
     font-weight: normal;
 
     &.is-active {
-      color: color(link-color);
+      color: color(sidebar-link-color);
       background: shade-dark(0.03);
     }
 
     &:hover {
-      color: color(link-hover-color);
+      color: color(sidebar-link-hover-color);
     }
 
     &-icon {

@@ -24,17 +24,11 @@ export default function ThirdSlide() {
               <ul>
                 <li>{translate('ONBOARDING_TEXT_20')}</li>
                 <li>{translate('ONBOARDING_TEXT_21')}</li>
-                <li>{translate('ONBOARDING_TEXT_22')}</li>
               </ul>
             </li>
             <li>
               {translate('ONBOARDING_TEXT_23', {
                 $link: 'https://etherscamdb.info/'
-              })}
-            </li>
-            <li>
-              {translate('ONBOARDING_TEXT_24', {
-                $link: 'https://download.mycrypto.com/'
               })}
             </li>
           </ul>
