@@ -6,7 +6,7 @@ export enum HELP_ARTICLE {
   RUNNING_LOCALLY = 'how-to/offline/how-to-run-mycrypto-offline-and-locally',
   MIGRATE_TO_METAMASK = 'how-to/migrating/moving-from-mycrypto-to-metamask',
   MIGRATE_TO_LEDGER = 'how-to/migrating/moving-from-mycrypto-to-ledger',
-  ADDING_NEW_TOKENS = 'troubleshooting/tokens/adding-new-token-and-sending-custom-tokens',
+  ADDING_NEW_TOKENS = '',
   HARDWARE_WALLET_RECOMMENDATIONS = 'staying-safe/hardware-wallet-recommendations',
   SENDING_TO_TREZOR = 'how-to/sending/trezor-sending-to',
   HOW_TO_USE_LEDGER = 'how-to/migrating/moving-from-mycrypto-to-ledger',

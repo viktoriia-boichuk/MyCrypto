@@ -554,7 +554,7 @@
     "SWAP_RECEIVE_INPUT_LABEL": "Receive",
     "SWAP_MAX_ERROR": "Maximum $rate_max $origin_id",
     "SWAP_MIN_ERROR": "Minimum $rate_max $origin_id",
-    "ADD_CUSTOM_TKN_HELP": "Need help? Learn how to add custom tokens.",
+    "ADD_CUSTOM_TKN_HELP": "Need help?",
     "TX_FEE_SCALE_LEFT": "Cheap",
     "TX_FEE_SCALE_RIGHT": "Fast",
     "TX_FEE_RECOMMENDED_FAST": "(Fast)",

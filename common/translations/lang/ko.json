@@ -561,7 +561,7 @@
     "SWAP_RECEIVE_INPUT_LABEL": "받기",
     "SWAP_MAX_ERROR": "최대 $rate_max $origin_id",
     "SWAP_MIN_ERROR": "최소 $rate_max $origin_id",
-    "ADD_CUSTOM_TKN_HELP": "도움이 필요하세요? 사용자 정의 토큰을 추가하는 방법을 배워봅시다.",
+    "ADD_CUSTOM_TKN_HELP": "도움이 필요하세요?",
     "TX_FEE_SCALE_LEFT": "저가",
     "TX_FEE_SCALE_RIGHT": "고속",
     "CHANGE_WALLET": "지갑 교체",

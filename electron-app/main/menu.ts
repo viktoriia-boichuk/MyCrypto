@@ -44,7 +44,7 @@ const HELP_MENU: MenuItemConstructorOptions = {
     {
       label: 'Help / FAQ',
       click() {
-        shell.openExternal('https://forum.auxilium.global/c/support/');
+        shell.openExternal('https://forum.auxilium.global/c/support');
       }
     },
     {

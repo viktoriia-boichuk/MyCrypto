@@ -558,7 +558,7 @@
     "SWAP_RECEIVE_INPUT_LABEL": "Recevoir",
     "SWAP_MAX_ERROR": "$rate_max $origin_id maximum",
     "SWAP_MIN_ERROR": "$rate_max $origin_id minimum",
-    "ADD_CUSTOM_TKN_HELP": "Besoin d'aide? Apprenez à ajouter des tokens personnalisés.",
+    "ADD_CUSTOM_TKN_HELP": "Besoin d'aide?",
     "TX_FEE_SCALE_LEFT": "Pas cher",
     "TX_FEE_SCALE_RIGHT": "Rapide",
     "CHANGE_WALLET": "Changer de portefeuille",

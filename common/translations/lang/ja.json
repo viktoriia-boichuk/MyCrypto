@@ -496,7 +496,7 @@
     "SWAP_RECEIVE_INPUT_LABEL": "受取",
     "SWAP_MAX_ERROR": "最大 $rate_max $origin_id",
     "SWAP_MIN_ERROR": "最小 $rate_max $origin_id",
-    "ADD_CUSTOM_TKN_HELP": "難しい？カスタムトークンの追加方法を覚えて下さい。",
+    "ADD_CUSTOM_TKN_HELP": "難しい？",
     "TX_FEE_SCALE_LEFT": "Cheap",
     "TX_FEE_SCALE_RIGHT": "Fast",
     "CHANGE_WALLET": "違うお財布を選ぶ",

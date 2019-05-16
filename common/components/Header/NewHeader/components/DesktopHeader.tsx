@@ -69,7 +69,7 @@ class DesktopHeader extends Component<Props> {
               <ul className="DesktopHeader-top-links">
                 <li>
                   <a
-                    href="https://forum.auxilium.global/c/support/"
+                    href="https://forum.auxilium.global/c/support"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
