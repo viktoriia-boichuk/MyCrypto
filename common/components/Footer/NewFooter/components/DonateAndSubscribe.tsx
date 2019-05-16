@@ -6,6 +6,7 @@ import { donationAddressMap } from 'config';
 import translate from 'translations';
 import ether from 'assets/images/ether.png';
 import bitcoin from 'assets/images/bitcoin.png';
+import auxilium from 'assets/images/AUXdonation.png';
 import Subscribe from './Subscribe';
 import './DonateAndSubscribe.scss';
 
@@ -47,6 +48,9 @@ class Donate extends Component {
           </CopyToClipboard>
           <CopyToClipboard text={donationAddressMap.BTC} onCopy={this.displayMessage}>
             <DonationButton icon={bitcoin} title="Bitcoin" />
+          </CopyToClipboard>
+          <CopyToClipboard text={donationAddressMap.AUX} onCopy={this.displayMessage}>
+            <DonationButton icon={auxilium} title="Auxilium" />
           </CopyToClipboard>
         </section>
         <p className={messageClassName}>

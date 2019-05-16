@@ -16,7 +16,7 @@ export default class SupportPage extends React.Component<{}, State> {
   };
 
   public render() {
-    const donationCurrencies: ['ETH', 'BTC'] = ['ETH', 'BTC'];
+    const donationCurrencies: ['ETH', 'BTC', 'AUX'] = ['ETH', 'BTC', 'AUX'];
 
     return (
       <TabSection>
@@ -63,7 +63,7 @@ export default class SupportPage extends React.Component<{}, State> {
 
                 <div className="row">
                   {donationCurrencies.map(currency => (
-                    <div className="col-sm-6 col-xs-12">
+                    <div className="col-sm-12 col-xs-12">
                       <div className="SupportPage-donate-type">
                         <div className="SupportPage-donate-type-currency">
                           <span
