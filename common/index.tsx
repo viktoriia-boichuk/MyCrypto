@@ -7,7 +7,6 @@ import React from 'react';
 import { render } from 'react-dom';
 
 import Root from './Root';
-import consoleAdvertisement from 'utils/consoleAdvertisement';
 import configuredStore from 'features/store';
 
 const appEl = document.getElementById('app');
@@ -22,10 +21,6 @@ if (module.hot) {
   module.hot.accept('./Root', () => {
     render(<Root store={configuredStore} />, appEl);
   });
-}
-
-if (process.env.NODE_ENV === 'production') {
-  consoleAdvertisement();
 }
 
 const noOp = (event: DragEvent) => {

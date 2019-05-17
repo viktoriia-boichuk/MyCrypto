@@ -43,14 +43,14 @@ class Donate extends Component {
       <section className="Donate">
         <h2>{translate('NEW_FOOTER_TEXT_1')}</h2>
         <section className="Donate-buttons">
+          <CopyToClipboard text={donationAddressMap.AUX} onCopy={this.displayMessage}>
+            <DonationButton icon={auxilium} title="Auxilium" />
+          </CopyToClipboard>
           <CopyToClipboard text={donationAddressMap.ETH} onCopy={this.displayMessage}>
             <DonationButton icon={ether} title="Ethereum" />
           </CopyToClipboard>
           <CopyToClipboard text={donationAddressMap.BTC} onCopy={this.displayMessage}>
             <DonationButton icon={bitcoin} title="Bitcoin" />
-          </CopyToClipboard>
-          <CopyToClipboard text={donationAddressMap.AUX} onCopy={this.displayMessage}>
-            <DonationButton icon={auxilium} title="Auxilium" />
           </CopyToClipboard>
         </section>
         <p className={messageClassName}>

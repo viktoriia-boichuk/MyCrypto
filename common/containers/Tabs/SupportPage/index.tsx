@@ -16,7 +16,7 @@ export default class SupportPage extends React.Component<{}, State> {
   };
 
   public render() {
-    const donationCurrencies: ['ETH', 'BTC', 'AUX'] = ['ETH', 'BTC', 'AUX'];
+    const donationCurrencies: ['AUX', 'ETH', 'BTC'] = ['AUX', 'ETH', 'BTC'];
 
     return (
       <TabSection>

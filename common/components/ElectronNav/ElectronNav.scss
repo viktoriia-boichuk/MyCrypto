@@ -32,7 +32,7 @@ $back-spacing: 10px;
       background-image: url('~assets/images/AUXILIUM_Logo_RGB.svg');
       background-position: center;
       background-repeat: no-repeat;
-      background-size: 100% 100%;
+      background-size: contain;
       cursor: pointer;
 
       @include theme(dark) {

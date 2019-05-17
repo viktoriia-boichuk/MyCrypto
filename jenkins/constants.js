@@ -2,9 +2,9 @@ const VERSION = require('../package.json').version;
 const GIT_COMMIT = process.env.GIT_COMMIT || 'commit-not-set';
 const GIT_COMMIT_SHORT = GIT_COMMIT.substring(0, 7);
 const JENKINS_BUILD_ID = process.env.BUILD_ID;
-const LINUX_FILES = [`MyCrypto-${VERSION}-i386.AppImage`, `MyCrypto-${VERSION}-x86_64.AppImage`];
-const WINDOWS_FILES = [`MyCrypto Setup ${VERSION}.exe`, `MyCrypto Setup ${VERSION}.exe.blockmap`];
-const OSX_FILES = [`MyCrypto-${VERSION}-mac.zip`, `MyCrypto-${VERSION}.dmg`, `MyCrypto-${VERSION}.dmg.blockmap`];
+const LINUX_FILES = [`Auxilium-${VERSION}-i386.AppImage`, `Auxilium-${VERSION}-x86_64.AppImage`];
+const WINDOWS_FILES = [`Auxilium Setup ${VERSION}.exe`, `Auxilium Setup ${VERSION}.exe.blockmap`];
+const OSX_FILES = [`Auxilium-${VERSION}-mac.zip`, `Auxilium-${VERSION}.dmg`, `Auxilium-${VERSION}.dmg.blockmap`];
 const FLAVOR = (() => {
   const { platform } = process;
 
