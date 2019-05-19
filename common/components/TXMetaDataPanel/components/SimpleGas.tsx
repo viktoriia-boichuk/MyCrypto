@@ -133,11 +133,7 @@ class SimpleGas extends React.Component<Props> {
           <FeeSummary
             gasPrice={gasPrice}
             scheduleGasPrice={scheduleGasPrice}
-            render={({ fee, usd }) => (
-              <span>
-                {fee} {usd && <span>/ ${usd}</span>}
-              </span>
-            )}
+            render={({ fee }) => <span>{fee}</span>}
           />
         </div>
       </div>
