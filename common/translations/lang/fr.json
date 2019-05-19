@@ -307,7 +307,7 @@
     "WARN_SEND_LINK": "Vous être arrivé grâce à un lien qui a rempli l'adresse, le montant, le gaz ou les champs de données pour vous. Vous pouvez modifier toutes les informations avant d'envoyer. Débloquez votre portefeuille pour démarrer. ",
     "GETH_BALANCE": "Solde insuffisant ",
     "GETH_GASLIMIT": "Limite en gaz dépassée ",
-    "ONBOARD_WELCOME_TITLE": "Bienvenue sur MyCrypto.com",
+    "ONBOARD_WELCOME_TITLE": "Bienvenue sur Auxilium Global",
     "ONBOARD_WELCOME_CONTENT__1": "Veuillez prendre le temps de lire ceci pour votre propre sécurité. 🙏",
     "ONBOARD_WELCOME_CONTENT__2": "Vos fonds seront volés si vous ne tenez pas compte de ces avertissements.",
     "ONBOARD_WELCOME_CONTENT__3": "Nous sommes conscients que cette étape est longue. Nous vous prions de nous en excuser.",
