@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { donationAddressMap } from 'config';
 import translate from 'translations';
 import { AppState } from 'features/reducers';
 import { configSelectors } from 'features/config';
@@ -35,7 +34,7 @@ const AddressField: React.SFC<Props> = ({
   showLabelMatch,
   toChecksumAddress,
   showIdenticon,
-  placeholder = `donate.mycryptoid.eth or ${donationAddressMap.ETH}`,
+  placeholder = `AUX address starting with 0x`,
   showInputLabel = true,
   onChangeOverride,
   value,
