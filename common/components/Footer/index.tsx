@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { translateRaw } from 'translations';
-import logo from 'assets/images/logo-mycrypto.svg';
+import logo from 'assets/images/AUXILIUM_Logo_Reverse_RGB.svg';
 import {
   donationAddressMap,
   VERSION,
@@ -69,12 +69,12 @@ export default class Footer extends React.PureComponent<Props, State> {
                 src={logo}
                 height="55px"
                 width="auto"
-                alt="MyCrypto logo"
+                alt="Auxilium logo"
               />
             </NewTabLink>
 
             <div className="Footer-about-links">
-              <NewTabLink href="https://mycrypto.com">MyCrypto.com</NewTabLink>
+              <NewTabLink href="https://auxilium.global/">Auxilium Global</NewTabLink>
               <NewTabLink href={knowledgeBaseURL}>{translateRaw('FOOTER_SUPPORT')}</NewTabLink>
               <NewTabLink href="https://about.mycrypto.com">
                 {translateRaw('FOOTER_TEAM')}
