@@ -80,7 +80,7 @@
     "X_CSV": "CSV bestand (onversleuteld) ",
     "X_DOWNLOAD": "Download ",
     "X_JSON": "JSON Bestand (onversleuteld) ",
-    "X_JSONDESC": "Dit is het onversleutelde, JSON formaat van je prive sleutel (\"Private Key\"). Dit betekend dat je het wachtwoord niet nodig hebt, maar ook dat een ieder die je JSON bestand vind toegang heeft tot je wallet & Ether zonder wachtwoord. ",
+    "X_JSONDESC": "Dit is het onversleutelde, JSON formaat van je prive sleutel (\"Private Key\"). Dit betekend dat je het wachtwoord niet nodig hebt, maar ook dat een ieder die je JSON bestand vind toegang heeft tot je wallet & AUX zonder wachtwoord. ",
     "X_KEYSTORE": "Keystore Bestand (UTC / JSON · Aangeraden · versleuteld) ",
     "X_KEYSTORE2": "Keystore Bestand ",
     "X_KEYSTOREDESC": "Dit Keystore bestand voldoet aan het formaat zoals gebruikt door Mist waardoor je het gemakkelijk kunt importeren in de toekomst. Dit is de aanbevolen methode voor download en back up. ",

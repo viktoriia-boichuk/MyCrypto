@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addHexPrefix } from 'ethereumjs-util';
 
-import { donationAddressMap } from 'config';
 import translate, { translateRaw } from 'translations';
 import { NetworkContract } from 'types/network';
 import { isValidAbiJson } from 'libs/validators';
@@ -95,7 +94,7 @@ class InteractForm extends Component<Props, State> {
                 <label className="input-group">
                   <div className="input-group-header">{translate('CONTRACT_TITLE')}</div>
                   <Input
-                    placeholder={`ensdomain.eth or ${donationAddressMap.ETH}`}
+                    placeholder={`AUX contract starting with 0x`}
                     name="contract_address"
                     autoComplete="off"
                     value={currentTo.raw}

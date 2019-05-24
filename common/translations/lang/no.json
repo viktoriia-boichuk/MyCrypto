@@ -80,7 +80,7 @@
     "X_CSV": "CSV-fil (ukryptert) ",
     "X_DOWNLOAD": "Last ned ",
     "X_JSON": "JSON-fil (ukryptert) ",
-    "X_JSONDESC": "Dette er det ukrypterte JSON-formatet av din private nøkkel. Dette betyr at du ikke trenger noe passord, men også at den som finner din JSON kan få tilgang til lommeboken din og etherne dine uten passord. ",
+    "X_JSONDESC": "Dette er det ukrypterte JSON-formatet av din private nøkkel. Dette betyr at du ikke trenger noe passord, men også at den som finner din JSON kan få tilgang til lommeboken din og AUX dine uten passord. ",
     "X_KEYSTORE": "Keystore-fil (UTC / JSON · Anbefalt · Kryptert) ",
     "X_KEYSTORE2": "Keystore-fil ",
     "X_KEYSTOREDESC": "Denne Keystore-filen samsvarer med formatet som brukes av Mist, så du enkelt kan importere den i fremtiden. Det er den anbefalte filen å laste ned og sikkerhetskopiere. ",

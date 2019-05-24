@@ -80,7 +80,7 @@
     "X_CSV": "CSV-Datei (unverschlüsselt) ",
     "X_DOWNLOAD": "Herunterladen ",
     "X_JSON": "JSON-Datei (unverschlüsselt) ",
-    "X_JSONDESC": "Dies ist die unverschlüsselte Version deines privaten Schlüssels im JSON-Format. Du benötigst daher kein Passwort, aber jeder, der über diese JSON-Datei verfügt, hat ohne Passwort Zugang zu deinem Wallet und dem darin enthaltenen Ether. ",
+    "X_JSONDESC": "Dies ist die unverschlüsselte Version deines privaten Schlüssels im JSON-Format. Du benötigst daher kein Passwort, aber jeder, der über diese JSON-Datei verfügt, hat ohne Passwort Zugang zu deinem Wallet und dem darin enthaltenen AUX. ",
     "X_KEYSTORE": "Keystore File (UTC / JSON · Empfohlen · Verschlüsselt) ",
     "X_KEYSTORE2": "Keystore File ",
     "X_KEYSTOREDESC": "Diese Keystore-Datei passt zu dem Format, das von Mist verwendet wird, sodass du diese Datei dort zukünftig einfach importieren kannst. Es ist empfehlenswert, diese Datei herunterzuladen und zu sichern. ",

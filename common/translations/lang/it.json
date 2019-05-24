@@ -80,7 +80,7 @@
     "X_CSV": "File CSV (non crittografato) ",
     "X_DOWNLOAD": "Download ",
     "X_JSON": "File JSON (non crittografato) ",
-    "X_JSONDESC": "Questa è la tua chiave privata in formato JSON non crittografato. Significa che non hai bisogno della password, ma chiunque trovi questo file JSON potrà avere accesso al tuo portafoglio e ai tuoi ether senza password. ",
+    "X_JSONDESC": "Questa è la tua chiave privata in formato JSON non crittografato. Significa che non hai bisogno della password, ma chiunque trovi questo file JSON potrà avere accesso al tuo portafoglio e ai tuoi AUX senza password. ",
     "X_KEYSTORE": "File Keystore (UTC / JSON · Consigliato · Crittografato) ",
     "X_KEYSTORE2": "File Keystore ",
     "X_KEYSTOREDESC": "Questo file Keystore è compatibile con il formato usato da Mist, in modo da poterlo facilmente importare in futuro. È il file consigliato da scaricare e conservare. ",
