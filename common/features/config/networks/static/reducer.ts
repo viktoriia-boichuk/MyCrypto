@@ -8,7 +8,7 @@ export const STATIC_NETWORKS_INITIAL_STATE: types.ConfigStaticNetworksState = {
     id: 'AUX',
     name: 'Auxilium',
     unit: 'AUX',
-    chainId: 8,
+    chainId: 28945486,
     isCustom: false,
     color: '#35395c',
     blockExplorer: makeExplorer({

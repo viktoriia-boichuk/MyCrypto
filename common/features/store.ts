@@ -77,7 +77,7 @@ window.addEventListener('load', () => {
     }
     detectOnlineStateConflict();
   }
-  detectOnlineStateConflict();
+  setTimeout(detectOnlineStateConflict, 5000);
 
   window.addEventListener('offline', () => {
     const previouslyOnline = getAppOnline();
