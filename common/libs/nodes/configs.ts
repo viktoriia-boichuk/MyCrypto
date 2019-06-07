@@ -11,7 +11,7 @@ export const NODE_CONFIGS: { [key in StaticNetworkIds]: RawNodeConfig[] } = {
       name: makeNodeName('AUX', 'auxilium'),
       type: 'rpc',
       service: 'Localhost',
-      url: 'http://localhost:8545/'
+      url: 'https://rpc.auxilium.global:8545'
     }
   ],
   ETC: [
