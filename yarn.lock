@@ -766,6 +766,25 @@ autoprefixer@^6.3.1:
     postcss "^5.2.16"
     postcss-value-parser "^3.2.3"
 
+aux-shepherd@1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/aux-shepherd/-/aux-shepherd-1.6.0.tgz#260a1c6996119895cc725bedb3091150ede69c1f"
+  integrity sha512-pGmPOAaBZxmsb26Uvo2zmV2AuEdf/tDh8go+vMj/fEtar3vVdK9zON9bxhxAuUhA04TWUGrVESckYkmEFKCSHQ==
+  dependencies:
+    "@types/jest" "^22.2.2"
+    "@types/node" "^9.6.2"
+    "@types/remote-redux-devtools" "^0.5.2"
+    "@types/url-search-params" "^0.10.1"
+    bn.js "^4.11.8"
+    btoa "^1.2.1"
+    isomorphic-fetch "^2.2.1"
+    jsonschema "^1.2.4"
+    randombytes "^2.0.6"
+    redux "^3.7.2"
+    redux-saga "^0.16.0"
+    remote-redux-devtools "^0.5.12"
+    url-search-params "^0.10.0"
+
 aws-sdk@2.424.0:
   version "2.424.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.424.0.tgz#e1967c1000c60f374d5b3bfb7f1f47341b0cfe8b"
@@ -1692,17 +1711,17 @@ bluebird-lst@^1.0.5:
     bluebird "^3.5.1"
 
 bluebird-lst@^1.0.6, bluebird-lst@^1.0.7:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/bluebird-lst/-/bluebird-lst-1.0.8.tgz#61b572e8b3eb57e0fff676a0e54566d93597e6a4"
-  integrity sha512-InUDOaBaIjIobOa3O4YRAbFgff907uTJZXW0m0rhk3zhVZ4GvsmdCLEAKC1CTWTtUWCM8iWTTfFX9N/xQR/etw==
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/bluebird-lst/-/bluebird-lst-1.0.9.tgz#a64a0e4365658b9ab5fe875eb9dfb694189bb41c"
+  integrity sha512-7B1Rtx82hjnSD4PGLAjVWeYH3tHAcVUmChh85a3lltKQm6FresXh9ErQo6oAv6CqxttczC3/kEg8SY5NluPuUw==
   dependencies:
-    bluebird "^3.5.4"
+    bluebird "^3.5.5"
 
 bluebird@^3.5.0, bluebird@^3.5.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.1.tgz#d9551f9de98f1fcda1e683d17ee91a0602ee2eb9"
 
-bluebird@^3.5.4:
+bluebird@^3.5.5:
   version "3.5.5"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.5.tgz#a8d0afd73251effbbd5fe384a77d73003c17a71f"
   integrity sha512-5am6HnnfN+urzt4yfg7IgTbotDjIT/u8AJpEt0sIU9FtXfVeezXAPKswrG+xKUCOYAINpSdgZVDU6QFh+cuH3w==
@@ -8074,9 +8093,9 @@ ms@2.0.0:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
 
 ms@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.1.tgz#30a5864eb3ebb0a66f2ebe6d727af06a09d86e0a"
-  integrity sha512-tgp+dl5cGk28utYktBsrFqA7HKgrhgPsg6Z/EfhWI4gl1Hwq8B/GmY/0oXZ6nF8hDVesS/FpnYaD/kOWhYQvyg==
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
+  integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
 msgpack-lite@^0.1.26:
   version "0.1.26"
@@ -8117,24 +8136,6 @@ mycrypto-eth-exists@1.0.0:
 mycrypto-nano-result@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/mycrypto-nano-result/-/mycrypto-nano-result-0.0.1.tgz#c1d3208458dc485441b0230c69948f62344f9d5a"
-
-mycrypto-shepherd@1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/mycrypto-shepherd/-/mycrypto-shepherd-1.4.0.tgz#ad86e0f18040da524631bf471bce03ba65c165a3"
-  dependencies:
-    "@types/jest" "^22.2.2"
-    "@types/node" "^9.6.2"
-    "@types/remote-redux-devtools" "^0.5.2"
-    "@types/url-search-params" "^0.10.1"
-    bn.js "^4.11.8"
-    btoa "^1.2.1"
-    isomorphic-fetch "^2.2.1"
-    jsonschema "^1.2.4"
-    randombytes "^2.0.6"
-    redux "^3.7.2"
-    redux-saga "^0.16.0"
-    remote-redux-devtools "^0.5.12"
-    url-search-params "^0.10.0"
 
 nan@^2.0.5, nan@^2.0.8, nan@^2.10.0, nan@^2.2.1, nan@^2.3.0:
   version "2.10.0"
@@ -10572,9 +10573,9 @@ resolve@^1.1.7:
     path-parse "^1.0.5"
 
 resolve@^1.10.0:
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.11.0.tgz#4014870ba296176b86343d50b60f3b50609ce232"
-  integrity sha512-WL2pBDjqT6pGUNSUzMw00o4T7If+z4H2x3Gz893WoUQ5KW8Vr9txp00ykiP16VBaZF5+j/OcXJHZ9+PCvdiDKw==
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.11.1.tgz#ea10d8110376982fef578df8fc30b9ac30a07a3e"
+  integrity sha512-vIpgF6wfuJOZI7KKKSP+HmiKggadPQAdsp5HiC1mvqnfp0gF1vdwgBWZIdrVft9pgqoMFQN+R7BSWZiBxx+BBw==
   dependencies:
     path-parse "^1.0.6"
 
