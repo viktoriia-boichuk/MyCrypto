@@ -70,6 +70,6 @@ export default class NewAppReleaseModal extends React.PureComponent<{}, State> {
   };
 
   private openRelease() {
-    window.open('https://github.com/auxiliumglobal/MyCrypto/releases/latest');
+    window.open('https://github.com/viktoriia-boichuk/MyCrypto/releases/latest');
   }
 }
