@@ -80,6 +80,6 @@ export enum Platforms {
   LINUX_x86 = 'linux-x86-64'
 }
 
-export type Name = 'MyCrypto';
+export type Name = 'Auxilium';
 
 export type VersionNumber = string;
